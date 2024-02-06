@@ -15,8 +15,8 @@ pub type DefaultExtrinsicParams<T> = signed_extensions::AnyOf<
         signed_extensions::CheckNonce,
         signed_extensions::CheckGenesis<T>,
         signed_extensions::CheckMortality<T>,
-        signed_extensions::ChargeAssetTxPayment<T>,
         signed_extensions::ChargeTransactionPayment,
+        signed_extensions::ChargeAssetTxPayment<T>,
     ),
 >;
 
@@ -137,8 +137,8 @@ impl<T: Config> DefaultExtrinsicParamsBuilder<T> {
             (),
             (),
             check_mortality_params,
-            charge_asset_tx_params,
             charge_transaction_params,
+            charge_asset_tx_params,
         )
     }
 }
